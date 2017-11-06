@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration 
+      PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+      "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry
+		location="F:\develop\repository\mysql\mysql-connector-java\5.1.18\mysql-connector-java-5.1.18.jar" />
+	<context id="mysqlTables" targetRuntime="MyBatis3">
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.81.18:3306/e3mall" userId="root"
+			password="1234">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 生成model模型，对应的包，存放位置可以指定具体的路径,如/ProjectName/src，也可以使用MAVEN来自动生成 -->
+		<javaModelGenerator targetPackage="cn.c3mall.pojo"
+			targetProject="c3mall-manager-pojo">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!--对应的xml mapper文件 -->
+		<sqlMapGenerator targetPackage="cn.c3mall.mapper"
+			targetProject="c3mall-manager-dao">
+			<property name="enableSubPackages" value="flase" />
+		</sqlMapGenerator>
+
+		<!-- 对应的dao接口 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.c3mall.mapper" implementationPackage="cn.c3mall.mapper"
+			targetProject="c3mall-manager-dao">
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+
+
+		<!-- 这里是数据库的表名table_user 以及 POJO类的名字User -->
+		<table schema="" tableName="tb_user"/>
+		<table schema="" tableName="tb_content"/>
+		<table schema="" tableName="tb_content_category"/>
+		<table schema="" tableName="tb_item"/>
+		<table schema="" tableName="tb_item_cat"/>
+		<table schema="" tableName="tb_item_desc"/>
+		<table schema="" tableName="tb_item_param"/>
+		<table schema="" tableName="tb_item_param_item"/>
+		<table schema="" tableName="tb_order"/>
+		<table schema="" tableName="tb_order_item"/>
+		<table schema="" tableName="tb_order_shipping"/>
+	</context>
+
+</generatorConfiguration>
