@@ -83,6 +83,11 @@
 			<artifactId>c3mall-manager-interface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>${pagehelper.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
