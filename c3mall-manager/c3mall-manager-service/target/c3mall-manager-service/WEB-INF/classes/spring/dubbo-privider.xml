@@ -31,7 +31,13 @@
 	<dubbo:protocol name="dubbo" port="20880" /> <!-- 声明需要暴露的服务接口 -->
 	<!-- 创建需要发布对象 -->
 	<bean id="itemServiceImpl" class="cn.c3mall.manager.service.impl.ItemServiceImpl">
-	</bean> <!-- 发布服务 -->
+	</bean>
+	 <!-- 发布服务 -->
 	<dubbo:service interface="cn.c3mall.manager.service.ItemService"
 		ref="itemServiceImpl" />
+		<!-- 创建需要发布对象 -->
+	<bean id="itemCatServiceImpl" class="cn.c3mall.manager.service.impl.ItemCatServiceImpl">
+	</bean>
+	<dubbo:service interface="cn.c3mall.manager.service.ItemCatService"
+		ref="itemCatServiceImpl" />
 </beans>

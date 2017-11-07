@@ -26,4 +26,7 @@ http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 	 <!-- 引用服务 -->
 	<dubbo:reference interface="cn.c3mall.manager.service.ItemService"
 		id="itemService" timeout="10000" retries="2"/>
+	 <!-- 引用服务 -->
+	<dubbo:reference interface="cn.c3mall.manager.service.ItemCatService"
+		id="itemCatService" timeout="10000" retries="2"/>
 </beans>
